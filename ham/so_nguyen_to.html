@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nguyen to dung ham</title>
+</head>
+<body>
+<label>In ra so nguyen to</label>
+<br/>
+<pre id="outputPrime"></pre>
+<script>
+    function testPrime(param) {
+        let temp=true;
+
+        if (param<2){
+            return temp=false;
+        } else if (param===2){
+            return temp=true;
+        } else if (param %2===0){
+            return temp=false;
+        } else {
+            for (let i = 3; i <param-1 ; i+=2) {
+                if (param % i===0) {
+                   return temp=false;
+                }
+            }
+        }
+        if (temp === true) {
+            document.write(param + " là số nguyên tố <br/>");
+        } else {
+            document.write(param + " không phải là số nguyên tố <br/>");
+        }
+    }
+
+    for (let i = 0; i < 20; i++) {
+        testPrime(i);
+    }
+</script>
+</body>
+</html>
