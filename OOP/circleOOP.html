@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle OOP</title>
+</head>
+<body>
+<script>
+    function Circle(radius,color){
+        this.radius=radius;
+        this.color=color;
+        this.getRadius=function () {
+            return "Ban kinh hinh tron la: "+ this.radius;
+        };
+        this.getArea=function () {
+            return "Dien tich hinh tron la: "+this.radius*3.14;
+        }
+    }
+    let myCircle=new Circle(20,"red");
+    console.log(myCircle.getRadius());
+    console.log(myCircle.getArea());
+</script>
+</body>
+</html>
