@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature OOP</title>
+</head>
+<body>
+<label>Temper C: </label>
+<input id="inputC" type="number">
+<button onclick="change()">Change</button>
+<br/>
+<p id="display"></p>
+<script>
+   function Temperature(temp) {
+       this.temp=temp;
+
+       this.tranF=function () {
+           return 1.8*temp+32;
+       };
+       this.tranD=function (){
+           return temp+273;
+       };
+   }
+   function change() {
+       let c=+document.getElementById("inputC").value;
+       let myTemp=new Temperature(c);
+       document.getElementById('display').innerHTML=`Do F: ${myTemp.tranF()} Do Kenvin: ${myTemp.tranD()}`;
+
+   }
+</script>
+</body>
+</html>
