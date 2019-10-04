@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle OOP</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Weight</td>
+        <td><input type="number" id="inputWeight"></td>
+    </tr>
+    <tr>
+        <td>Height</td>
+        <td><input type="number" id="inputHeight"></td>
+    </tr>
+    <tr>
+        <td><button onclick="drawRectangle()">Drawing with Canvas</button></td>
+        <td></td>
+    </tr>
+</table>
+<p id="display"></p>
+<canvas id="myCanvas" width="200px" height="200px" style="border: 2px solid mediumspringgreen"></canvas>
+<SCRIPT>
+    function Rectangle(height,weight,name) {
+        this.height=height;
+        this.weight=weight;
+        this.name=name;
+        this.chuVi=function () {
+            return (height+weight)*2;
+        };
+        this.dienTich=function () {
+            return height*weight;
+        };
+        this.getCanvas=function () {
+            let canvas=document.getElementById("myCanvas");
+            let ctx=canvas.getContext("2d");
+            ctx.fillStyle="blue";
+            ctx.fillRect(20,20,this.weight,this.height);
+        }
+    }
+    // let myRectangle=new Rectangle(30,20);
+    // console.log(myRectangle.chuVi());
+    // console.log(myRectangle.dienTich());
+    // myRectangle.getCanvas();
+
+    function drawRectangle() {
+        let chieudai=+document.getElementById('inputWeight').value;
+        let chieurong=+document.getElementById('inputHeight').value;
+        let myRec=new Rectangle(chieudai,chieurong,"rec");
+        myRec.getCanvas();
+        // document.getElementById('display').innerHTML="Dien tich: "+myRec.dienTich()+" Chu vi "+myRec.chuVi() + "cua "+ myRec.name;
+        document.getElementById('display').innerHTML=`dien tich: ${myRec.dienTich()} chu vi:${myRec.chuVi()} `;
+    }
+</SCRIPT>
+</body>
+</html>
