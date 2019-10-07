@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam & Eva</title>
+</head>
+<body>
+<script>
+    function Apple(weight) {
+        this.weight = weight;
+
+        this.decreaseApple = function () {
+            this.weight--;
+        };
+        this.isEmpty = function () {
+            if (this.weight > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function Human(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+        this.eat = function (food) {
+            if (!food.isEmpty()) {
+                food.decreaseApple();
+                this.increase();
+            } else {
+                alert("het tao")
+            }
+        };
+        this.increase = function () {
+            this.weight++;
+        }
+    };
+
+    let apple = new Apple(20);
+    let adam = new Human("ADAM", true, 50);
+    let eva = new Human("Eva", false, 40);
+
+    adam.eat(apple);
+    eva.eat(apple);
+
+    console.log(adam.weight);
+
+
+</script>
+</body>
+</html>

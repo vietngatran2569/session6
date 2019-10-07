@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+<script>
+    //tao 1 doi tuong
+    //let person={};
+    let person={
+        name :{
+            first:'Bob',
+            last:'Smith'
+        },
+        age :32,
+        gender :'male',
+        interests: ['music','skiing'],
+        bio: function () {
+            alert(this.name[0]+' '+this.name[1]+'is'+this.age+'years old.'+"They are "+this.gender+' Their interests: '+this.interests[0]+' '+this.interests[1])
+        },
+        greeting:function () {
+            alert('Hello i am '+this.name[0])
+        }
+    };
+    person.age=45;
+    //alert(person.age);
+    //person.name.last="hoa";
+    person['name']['last']="HOA";
+   // alert(person.name.last);
+    // person.bio();
+    // person.greeting();
+    // person.name.first;
+    person['eye']='haxel';
+    person.fare=function () {
+        alert("goodbuye");
+    };
+    document.write(person.eye);
+    alert(person.fare());
+</script>
+
+
+</body>
+</html>

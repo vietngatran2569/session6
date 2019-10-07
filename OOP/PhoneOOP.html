@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone OOP</title>
+</head>
+<body>
+<div class="mobie">
+    <div class="name">Nokia</div>
+    <textarea id="inbox-nokia" placeholder="inbox"></textarea>
+    <textarea id="outbox-nokia" placeholder="outbox"></textarea>
+    <input id="message-nokia" placeholder="msg">
+    <button type="button" onclick="sendMsg(nokia,samsung)">Send</button>
+</div>
+
+<div class="mobie">
+    <div class="name">samsung</div>
+    <textarea id="inbox-samsung" placeholder="inbox"></textarea>
+    <textarea id="outbox-samsung" placeholder="outbox"></textarea>
+    <input id="message-samsung" placeholder="msg">
+    <button type="button" onclick="sendMsg(nokia,samsung)">Send</button>
+</div>
+<script>
+ function Mobile(name) {
+     this.name=name;
+     this.message="";
+     this.inbox=[];
+     this.outbox=[];
+     
+     this.writeMessage=function (value) {
+         this.message=value;
+     };
+     this.sendMessage=function (mobile) {
+         this.outbox.push(this.message);
+         mobile.receiveMessage(this.value);
+     };
+     this.receiveMessage=function (value) {
+         this.inbox.push(this.message);
+     }
+ }
+ let nokia=new Mobile("NOKIA");
+ let samsung=new Mobile("SAMSUNG");
+
+
+ ////////////////////////////////////////////////////////
+   function display(mobile) {
+
+   }
+</script>
+</body>
+</html>
